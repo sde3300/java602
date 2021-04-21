@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>title name</title>
+    <script>
+        console.log(0);
+        console.log(1);
+        console.log(2);
+        console.log(3);
+        console.log(4);
+        console.log(5);
+        console.log(6);
+        console.log(7);
+        console.log(8);
+        console.log(9);
+
+        console.log("\n--------for문을 사용하여 출력---------\n")
+
+        // for : 가장 많이 사용하는 반복문
+        for (var i = 0; i < 10 ; i++) {
+            console.log(i);
+        }
+
+        // 문제 1) for문을 사용하여 1 ~ 10까지의 값을 모두 합하여 화면에 출력하세요
+        // 결과는 55가 출력
+        // for문은 외부에 값을 저장할 변수가 다로 필요함
+
+        // 자바스크립트의 변수로 자료형(데이터타입)을 데이터가 저장된 후 판단
+        //for문 외부에 값을 저장할 변수가 따로 필요함
+
+        //var result;
+        //변수 result는 메모리 상에 선언만 되고 초기화되지 않았기 때문에 기본값이 undefined로 설정됨
+        //undefined는 정수타입의 데이터 타입이 아니기 때문에 숫자와 연산이 불가능하여 undefined와 숫자 타입과 연산후 결과가 NaN(Not a Number)이 출력됨
+
+        //자바스크립트에서 연산용으로 사용할 변수에 초기화가 중요함
+        var result = 0; // 1 ~ 10까지의 합을 저장할 변수
+
+//초기값 1, 조건 : 11보다 작을 때, ++(매번 1씩 증가)
+        for (var i = 1; i < 11; i++) {
+            result = result + i; //실행코드
+        }
+
+        console.log("1 ~ 10까지의 합은" + result + "입니다")
+
+
+    console.log("\n--------while 문---------\n")
+    // while문 : 가장 기본적인 반복문
+    // 초기식이 while문 밖에 존재함
+    // 증감식이 실행코드 영역(코드블럭)에 같이 존재함
+    // 조건식만 while 문 키워드와 함께 사용
+    // while문은 초기식과 증감식이 while문 선언과 동시에 존재하는 것이 아니기 때문에 초기식은 while문이 종료된 후에도 계속 메모리에 남아있으며, 증감식은 사용하는 위치에 따라 결과가 다르게 출력 될 수 있음.
+
+    var count = 0;
+    while (count < 10) {
+        console.log(count);
+        count++;
+    }
+
+    console.log("------주의점1, 증감식 위치-------")
+    console.log("------증감식을 마지막에 사용-------")
+    var count = 0;
+    while (count < 10) {
+        console.log(count);
+        count++;
+    }
+
+
+    console.log("------증감식을 처음에 사용------")
+    var count = 0;
+    while (count < 10) {
+        count++;
+        console.log(count);
+    }
+
+
+    console.log("------주의점2, 초기식의 값이 남아있음-------")
+    console.log("------초기식 처음 사용-------")
+    // 초기식에 사용된 변수를 계속 활용할 경우 기존의 while문에서 증감된 데이터가 그대로 메모리에 남아있기 때문에 오류가 발생할 가능성이 높음.
+    // for문의 경우는 초기식, 조건식, 증감식을 한번에 입력하도록 형태를 고정하고 있어서 이러한 재활용 오류가 발생할 가능성이 낮음
+    var count2 = 0;
+    while (count2 < 5) {
+        console.log(count2);
+        count2++;
+    }
+
+    console.log("------초기식 재활용 사용------")
+
+    while (count2 < 5) {
+        console.log(count2);
+        count2++;
+    }
+    
+    console.log("------주의점3, 증감식 미 입력-------")
+    // 증감식 부분을 미입력하게 되면 무한루프에 빠짐
+    var count3 = 0;
+    while (count3 < 5) {
+        console.log(count3);
+        //count3++;
+    }
+
+    for (var i = 0; i < 5; i++) {
+        console.log(i);
+    }
+
+    // 문제 2) while문을 사용하여 숫자 1 ~ 10까지의 합을 구하는 프로그램을 작성하세요
+    // 변수 두개 사용
+    
+    </script>
+</head>
+<body>
+
+</body>
