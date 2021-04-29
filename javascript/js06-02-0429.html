@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>title name</title>
+
+	<script>
+		// 객체형(연관배열, object 타입)
+		// 배열과 동일하게 하나의 변수명으로 여러개의 데이터를 저장하는 데이터 타입
+		// 배열과 달리 index가 없고, 데이터 하나하나와 연결된 key가 존재함
+		// object 타입은 index가 없기 때문에 순서가 없음
+			// key와 value이 1:1로 연결되어 있는 데이터 타입
+			// object 타입을 생성 시 각각의 key명을 지정해야 함
+			// key와 value를 구분하는 기호는 ' : ' 이며, 각각의 데이터를 구분하는 기호는 ' , ' 임
+		// 데이터를 가져오거나 저장할 경우, key를 사용해야 함
+		// [] 대신 .을 사용하여 구분함
+		// ["key"명]을 사용하여 출력이 가능함
+			// 배열[index] == 객체.key명 // 형태가 비슷
+			// 객체.key명 == 객체["key명"] // 객체의 데이터를 가져오거나 저장하는 방식이 2가지
+		// object 타입 생성 시 [] 대신 {}를 사용함
+
+		// 배열과 object 타입의 차이점
+		// object 타입은 하나의 사물 혹은 데이터가 가지고 있는 여러가지 특징을 저장하는데 사용
+		// 배열은 동일한 타입의 데이터를 여러개 저장하는데 사용
+
+		// 선언 및 사용방법
+		// 선언
+			// var object명 = {"key1" : "데이터1", "key2" : "데이더2", ..., "keyn" : "데이터n"}; // object 타입 선언과 동시에 데이터 저장
+			// var object명 = {}; // 빈 object 타입을 메모리에 선언
+
+		// 사용
+			// object명.key명; // 지정한 key에 1:1로 연관되어 있는 데이터를 가져옴
+			// object명.key명 = 데이터; // 지정한 key에 1:1로 새로운 데이터를 저장
+
+		var car1 = {name : "말리부", size : "중형", type : "세단", color : "회색", price : "2500"};
+		console.log(car1);
+
+		var car2 = ["말리부", "중형", "세단", "회색", "2500"];
+		console.log(car2);
+
+		console.log(car2[0]);
+		console.log(car2[1]);
+		console.log(car2[2]);
+		console.log(car2[3]);
+		console.log(car2[4]);
+
+		console.log(car1.name);
+		console.log(car1.size);
+		console.log(car1.type);
+		console.log(car1.color);
+		console.log(car1.price);
+
+		var student = {name : "홍길동", birth : "2000.1.1", studentNumber : "001", age : "22", gender : "남성"};
+		console.log(student.name);
+		console.log(student["studentNumber"]);
+		console.log(student.age);
+		console.log(student["gender"]);
+		console.log(student.birth);
+
+
+		console.log("\n ---- 문제 1 ---- \n")
+		// 문제 1) 현재 여행 가고싶은 장소 하나를 선택하여 그 정보를 object 타입에 저장하고 출력하는 프로그램을 작성하세요
+		// 필수 항목 : 여행지명, 거리, 이동방법
+		// key명은 영어로 입력, value는 한글로 사용해도 상관 없음
+
+		var trip = {name : "순천", distance : "184km", trans : "자가용", spot : "순천만", food : "단감"};
+		console.log(trip);
+		console.log(trip.trans);
+		console.log(trip.distance);
+		console.log(trip.name);
+		console.log(trip.food);
+		console.log(trip.spot);
+
+
+		console.log("\n ---- for ~ in 문 사용 ---- \n")
+		// object 타입의 데이터를 반복문으로 출력하기
+		// for ~ in 문을 사용하여 데이터 출력
+		// 자바에서는 발전된 for문 이라고 불리움, C#에서는 foreach문 이라는 이름을 가지고 있음
+		// for ~ in 문은 객체형 타입의 데이터에 저장된 내용을 하나씩 출력하는데 최적화된 반복문
+		// for의 조건문 내에서 선언된 변수는 객체가 가지고 있는 데이터 중 하나를 받아와서 저장하고 있으며, 이는 한번의 루프마다 데이터를 저장하고 루프가 끝나면 자동으로 삭제됨
+			// for (var 변수명 in 객체명) {
+			// 		반복 실행할 소스...
+			// }
+
+		// object 타입의 변수는 index가 없기 때문에 기존의 반복문으로는 내용을 자동으로 출력할 수 없음
+		// for ~ in 문을 사용하여 object 타입의 변수가 가지고 있는 key를 하나씩 불러와서 object 타입의 데이터를 출력해야 함
+		for(var item in trip) {
+			console.log(item + " : " + trip[item]);
+			
+		} // (var item)변수 (in tour)object
+
+		// console.log(trip.trans);
+		// console.log(trip.distance);
+		// console.log(trip.name);
+		// console.log(trip.food);
+		// console.log(trip.spot);
+
+
+		console.log("\n ---- 문제 2 ---- \n")
+		// 문제 2) 자신의 현실적인 드림카에 대한 정보를 object 타입의 변수에 저장하고 for ~ in문을 통해서 출력하는 프로그램을 작성하세요
+		// 정보는 네이버 자동차에서 참고
+
+		var myCar = {name : "벤츠 s클래스", color : "black", price : "20,000만원", fuel : "디젤", brand : "벤츠"};
+
+		for(var car in myCar) {
+			console.log(car + " : " + myCar[car]);
+		}
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
